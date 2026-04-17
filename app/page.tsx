@@ -639,6 +639,9 @@ export default function NourtrendStore() {
                   <img 
                     src={product.image} 
                     alt={product.name}
+                    loading={product.id === 1 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={product.id === 1 ? "high" : "low"}
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                   />
                   <div className="absolute top-3 right-3">
